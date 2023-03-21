@@ -1,3 +1,38 @@
 .promo
-    &__inner
-        display: flex
+    display: none
+    &__image
+        position: absolute
+        top: 131px
+        right: 155px
+        width: 685px
+        height: 727px
+        &-childrens,  &-cleaning, &-water,  &-wifi, &-gas, &-robot
+            animation-timing-function: ease-in-out
+            animation-duration: 4s
+            animation-iteration-count: infinite
+        &-childrens,  &-cleaning, &-water
+            animation-name: right
+        &-wifi, &-gas
+            animation-name: left
+        &-robot
+            animation-name: down
+        &-childrens
+            right: 0
+            bottom: 244px
+        &-wifi
+            left: 16px
+            bottom: 48px
+        &-cleaning
+            left: 58px
+            bottom: 326px
+        &-gas
+            bottom: 533px
+        &-water
+            left: 162px
+            top: 0
+        &-robot
+            right: 24px
+            top: 21px
+            z-index: 10
+
+        
