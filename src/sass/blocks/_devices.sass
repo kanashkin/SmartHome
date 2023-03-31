@@ -1,0 +1,30 @@
+.devices
+    display: none
+    &__visual
+        position: absolute
+        right: 197px
+        bottom: 146px
+        width: 677px
+        height: 681px
+        &-philips, &-hiper, &-aqara, &-yeelight, &-robot
+            animation-timing-function: ease-in-out
+            animation-duration: 4s
+            animation-iteration-count: infinite
+        &-philips
+            right: 56px
+            bottom: 293.5px
+            animation-name: right
+        &-hiper
+            left: 0
+            bottom: 348.5px
+            animation-name: left
+        &-aqara
+            left: 43px
+            top: 0
+            animation-name: right
+        &-yeelight
+            right: 0
+            top: 111.5px
+            animation-name: left
+        &-robot
+            right: 109px
