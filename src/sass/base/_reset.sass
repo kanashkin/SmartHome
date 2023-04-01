@@ -12,9 +12,19 @@
 body
 	padding-left: 65px
 	background-color: #F1F2F6
+	overflow-y: hidden
 
 img
 	max-width: 100%	
 	object-fit: cover
 
-// .container
+.promo, .apps, .important, .click, .groups, .devices, .download
+	height: 100vh
+	display: none
+	&__inner
+		height: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__visual
+		bottom: -30px

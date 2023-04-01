@@ -1,0 +1,50 @@
+.accordion
+    width: 892px
+    height: 455px
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    right: 0
+    hr
+        height: 1px
+        width: 100%
+        background-color: #DFE4EA
+    &-title
+        font-weight: 600
+        font-size: 48px
+        line-height: 130%
+        margin-bottom: 25px
+    &__block
+        border-top: 1px solid #DFE4EA
+        padding-top: 25px
+        padding-bottom: 24px
+    &__head
+        display: flex
+        justify-content: space-between
+    &-subtitle
+        font-weight: 600
+        font-size: 18px
+        line-height: 130%
+        color: #151923
+        max-width: 604px
+    &-trigger
+        cursor: pointer
+        transition: .3s ease-in-out
+        height: 24px
+        width: 24px
+        background-image: url(../img/download/arrow.png)
+        background-repeat: no-repeat
+        &.active
+            background-image: url(../img/download/arrow_active.png)
+    &-content
+        margin-top: 16px
+        font-weight: 400
+        font-size: 16px
+        line-height: 150%
+        color: #57606F
+        max-width: 604px
+        display: none
+        animation-timing-function: ease-in-out
+        animation-duration: 1s
+        &.active
+            display: block
