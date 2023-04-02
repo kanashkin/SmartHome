@@ -32,15 +32,15 @@ const widgetSwitcher = (parentSelector, elementSelector, appSelector) => {
     }
 
     const switcherClick = () => {
-        const switcher = document.querySelector('.widget-switcher.clone>label.switch')
-        switcher.click()
+        const switcher = document.querySelector('.widget-switcher.clone>label>input')
+        switcher.checked = !switcher.checked
     }
 
     cloneWidget()
     switcherClick()
-    setTimeout(blur, 500, appBlock, 'app__widgets')
-    setTimeout(blur, 500, document.querySelector('.app__click>.app__widgets'), 'cloneable')
-    setTimeout(blur, 500, document.querySelector('.app__widgets__block.cloneable'), 'clone')
+    setTimeout(blur, 1000, appBlock, 'app__widgets')
+    setTimeout(blur, 1000, document.querySelector('.app__click>.app__widgets'), 'cloneable')
+    setTimeout(blur, 1000, document.querySelector('.app__widgets__block.cloneable'), 'clone')
     setTimeout(showWidget, 2000)
     setInterval(switcherClick, 2000)
     
