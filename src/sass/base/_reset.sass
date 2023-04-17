@@ -20,8 +20,13 @@ img
 .promo, .apps, .important, .click, .groups, .devices, .download
 	padding-left: 65px
 	height: 100vh
-	display: none
-	
+	position: relative
+	&__visual
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
 .header
 	padding-left: 65px
+.download
+	display: block
 	

@@ -1,7 +1,9 @@
 .download
-    padding-right: 64px
+    &__inner
+        display: flex
+        justify-content: space-between
     &__buttons
-        margin-top: 38px
+        margin-top: 48px
         display: flex
         gap: 32px
     &__block-right
@@ -9,5 +11,13 @@
         position: relative
         width: 50%
         overflow: auto
+        right: 64px
         &::-webkit-scrollbar
             width: 0
+    .title
+        position: relative
+        transform: none
+    &-title__block
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
