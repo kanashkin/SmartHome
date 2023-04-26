@@ -7,41 +7,71 @@
 <body>
 	@@include('html/header.html',{})
 
-	<div class="page-wrapper">
-		<div class="promo">
-			<h2 class="title">
+	<div class="site-wrapper">
+		<div class="title-wrapper">
+			<h2 class="title title-promo">
 				<span class="title-over"><span class="title-anim">Управляй</span></span>
 				<span class="title-over"><span class="title-anim">своим домом</span></span>
 				<span class="title-over"><span class="title-anim">в <span class="title-blue">одно косание</span></span></span>
 			</h2>
-			<div class="promo__visual">
-				<img class="promo__visual-robot" src="img/promo/robot.png" alt="robot image">
-				<img class="promo__visual-water" src="img/promo/water.png" alt="water image">
-				<img class="promo__visual-gas" src="img/promo/gas.png" alt="gas image">
-				<img class="promo__visual-cleaning" src="img/promo/cleaning.png" alt="cleaning image">
-				<img class="promo__visual-wifi" src="img/promo/wifi.png" alt="wifi image">
-				<img class="promo__visual-childrens" src="img/promo/childrens.png" alt="childrens image">
-			</div>
-		</div>
-
-		<div class="apps">
-			<h2 class="title">
-				<span class="title-over"><span class="title-blue">Не надо</span></span>
+			<h2 class="title title-apps">
+				<span class="title-over"><span class="title-anim"><span class="title-blue">Не надо</span></span></span>
 				<span class="title-over"><span class="title-anim">скачивать кучу</span></span>
 				<span class="title-over"><span class="title-anim">приложений</span></span>
 			</h2>
-			<div class="apps__visual">
-				<img class="apps__visual-hand" src="img/apps/hand.png" alt="hand without phone">
-				<img class="apps__visual-hand_phone" src="img/apps/hand_phone.png" alt="hand with phone">
-			</div>
-		</div>
-
-		<div class="important">
-			<h2 class="title">
+			<h2 class="title title-important">
 				<span class="title-over"><span class="title-anim">Самое важное</span></span>
 				<span class="title-over"><span class="title-anim">на <span class="title-blue">видном месте</span></span></span>
 			</h2>
-			<div class="important__visual">
+			<h2 class="title title-click">
+				<span class="title-over"><span class="title-anim">Включай</span></span>
+				<span class="title-over"><span class="title-anim">и выключай</span></span>
+				<span class="title-over"><span class="title-anim">в <span class="title-blue">одно нажатие</span></span></span>
+			</h2>
+			<h2 class="title title-groups">
+				<span class="title-over"><span class="title-anim">Группируй</span></span>
+				<span class="title-over"><span class="title-anim">и <span class="title-blue">называй</span></span></span>
+				<span class="title-over"><span class="title-anim">элементы</span></span>
+			</h2>
+			<h2 class="title title-devices">
+				<span class="title-over"><span class="title-anim">Работаем</span></span>
+				<span class="title-over"><span class="title-anim"><span class="title-blue">с разными</span></span></span>
+				<span class="title-over"><span class="title-anim">устройствами</span></span>
+			</h2>
+			<div class="download-title__block title-download">
+				<h2 class="title">
+					<span class="title-over"><span class="title-anim"><span class="title-blue">Скачай</span></span></span>
+					<span class="title-over"><span class="title-anim">в пару нажатий</span></span>
+				</h2>
+				<!-- <div class="download__buttons">
+					<button class="button-download">
+						<img src="img/download/android.png" alt="android icon">
+						<h4>Для Android</h4>
+					</button>
+					<button class="button-download">
+						<img src="img/download/apple.png" alt="apple icon">
+						<h4>Для iPhone</h4>
+					</button>
+				</div> -->
+			</div>
+		</div>
+
+		<div class="visual-wrapper">
+			<div class="visual promo-visual">
+				<img class="promo-visual-robot" src="img/promo/robot.png" alt="robot image">
+				<img class="promo-visual-water" src="img/promo/water.png" alt="water image">
+				<img class="promo-visual-gas" src="img/promo/gas.png" alt="gas image">
+				<img class="promo-visual-cleaning" src="img/promo/cleaning.png" alt="cleaning image">
+				<img class="promo-visual-wifi" src="img/promo/wifi.png" alt="wifi image">
+				<img class="promo-visual-childrens" src="img/promo/childrens.png" alt="childrens image">
+			</div>
+
+			<div class="visual apps-visual">
+				<img class="apps-visual-hand" src="img/apps/hand.png" alt="hand without phone">
+				<img class="apps-visual-hand_phone" src="img/apps/hand_phone.png" alt="hand with phone">
+			</div>
+
+			<div class="visual important-visual">
 				<div class="app">
 					<div class="app__header">
 						<div class="app__block">
@@ -164,15 +194,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="click">
-			<h2 class="title">
-				<span class="title-over"><span class="title-anim">Включай</span></span>
-				<span class="title-over"><span class="title-anim">и выключай</span></span>
-				<span class="title-over"><span class="title-anim">в <span class="title-blue">одно нажатие</span></span></span>
-			</h2>
-			<div class="click__visual">
+			<div class="visual click-visual">
 				<div class="app app__click">
 					<div class="app__header">
 						<div class="app__block">
@@ -295,121 +318,85 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="groups">
-			<h2 class="title">
-				<span class="title-over"><span class="title-anim">Группируй</span></span>
-				<span class="title-over"><span class="title-anim">и <span class="title-blue">называй</span></span></span>
-				<span class="title-over"><span class="title-anim">элементы</span></span>
-			</h2>
-			<div class="groups__visual">
+			<div class="visual groups-visual">
 				<img src="img/groups/phone.png" alt="phone image">
 			</div>
-		</div>
 
-		<div class="devices">
-			<h2 class="title">
-				<span class="title-over"><span class="title-anim">Работаем</span></span>
-				<span class="title-over"><span class="title-blue">с разными</span></span>
-				<span class="title-over"><span class="title-anim">устройствами</span></span>
-			</h2>
-			<div class="devices__visual">
-				<img class="devices__visual-robot" src="img/devices/robot.png" alt="robot image">
-				<img class="devices__visual-hiper" src="img/devices/hiper.png" alt="hiper icon">
-				<img class="devices__visual-aqara" src="img/devices/aqara.png" alt="aqara icon">
-				<img class="devices__visual-yeelight" src="img/devices/yeelight.png" alt="yeelight icon">
-				<img class="devices__visual-philips" src="img/devices/philips.png" alt="philips icon">
+			<div class="visual devices-visual">
+				<img class="devices-visual-robot" src="img/devices/robot.png" alt="robot image">
+				<img class="devices-visual-hiper" src="img/devices/hiper.png" alt="hiper icon">
+				<img class="devices-visual-aqara" src="img/devices/aqara.png" alt="aqara icon">
+				<img class="devices-visual-yeelight" src="img/devices/yeelight.png" alt="yeelight icon">
+				<img class="devices-visual-philips" src="img/devices/philips.png" alt="philips icon">
 			</div>
-		</div>
 
-		<div class="download">
-			<div class="download__inner">
-				<div class="download__block-left">
-					<div class="download-title__block">
-						<h2 class="title">
-							<span class="title-over"><span class="title-blue">Скачай</span></span>
-							<span class="title-over"><span class="title-anim">в пару нажатий</span></span>
-						</h2>
-						<div class="download__buttons">
-							<button class="button-download">
-								<img src="img/download/android.png" alt="android icon">
-								<h4>Для Android</h4>
-							</button>
-							<button class="button-download">
-								<img src="img/download/apple.png" alt="apple icon">
-								<h4>Для iPhone</h4>
-							</button>
+			<div class="visual download-visual">
+				<div class="accordion">
+					<div class="accordion-title">Частые вопросы</div>
+					<div class="accordion__block">
+						<div class="accordion__head">
+							<div class="accordion-subtitle">А можно подключить «неумное» к умному дому?</div>
+							<div class="accordion-trigger"></div>
 						</div>
+						<p class="accordion-content">
+							Можно. Например, с помощью умных розеток и ИК-пульта.
+							Если включить устройство в умную розетку, она будет дистанционно
+							подавать и отключать питание, следить за потреблением энергии и
+							поддерживать работу по расписанию. Но для этого прибор должен включаться сразу
+							при подаче электричества. Например, с телевизором так не получится.
+							Если его выключить из розетки, а потом включить обратно — изображение не появится,
+							пока не нажмешь кнопку на пульте.
+						</p>
 					</div>
-				</div>
-				<div class="download__block-right">
-					<div class="accordion">
-						<div class="accordion-title">Частые вопросы</div>
-						<div class="accordion__block">
-							<div class="accordion__head">
-								<div class="accordion-subtitle">А можно подключить «неумное» к умному дому?</div>
-								<div class="accordion-trigger"></div>
-							</div>
-							<p class="accordion-content">
-								Можно. Например, с помощью умных розеток и ИК-пульта.
-								Если включить устройство в умную розетку, она будет дистанционно
-								подавать и отключать питание, следить за потреблением энергии и
-								поддерживать работу по расписанию. Но для этого прибор должен включаться сразу
-								при подаче электричества. Например, с телевизором так не получится.
-								Если его выключить из розетки, а потом включить обратно — изображение не появится,
-								пока не нажмешь кнопку на пульте.
-							</p>
+					<div class="accordion__block">
+						<div class="accordion__head">
+							<div class="accordion-subtitle">Зачем нужно приложение?</div>
+							<div class="accordion-trigger"></div>
 						</div>
-						<div class="accordion__block">
-							<div class="accordion__head">
-								<div class="accordion-subtitle">Зачем нужно приложение?</div>
-								<div class="accordion-trigger"></div>
-							</div>
-							<p class="accordion-content">
-								В программе на смарфтоне можно включать и выключать устройства, смотреть статусы
-								(что включено, а что нет), запускать сценарии. Например, настроить лампу,
-								чтобы она плавно включала свет с семи утра. Еще мобильное приложение отвечает
-								за обратную связь: отправляет уведомления с датчика протечки или от робота-пылесоса
-								о том, что он закончил уборку.
-							</p>
+						<p class="accordion-content">
+							В программе на смарфтоне можно включать и выключать устройства, смотреть статусы
+							(что включено, а что нет), запускать сценарии. Например, настроить лампу,
+							чтобы она плавно включала свет с семи утра. Еще мобильное приложение отвечает
+							за обратную связь: отправляет уведомления с датчика протечки или от робота-пылесоса
+							о том, что он закончил уборку.
+						</p>
+					</div>
+					<div class="accordion__block">
+						<div class="accordion__head">
+							<div class="accordion-subtitle">Можно ли подключить умные гаджеты разных производителей к одному умному дому?</div>
+							<div class="accordion-trigger"></div>
 						</div>
-						<div class="accordion__block">
-							<div class="accordion__head">
-								<div class="accordion-subtitle">Можно ли подключить умные гаджеты разных производителей к одному умному дому?</div>
-								<div class="accordion-trigger"></div>
-							</div>
-							<p class="accordion-content">
-								У каждого производителя (Aqara, Hiper, Ajax, Digma и другие) свое мобильное приложение
-								для управления гаджетами и настройки сценариев. Обычно, подключить к такой программе
-								устройства другого бренда нельзя. Но мы решили эту проблему, теперь все устройства
-								могут быть в одном приложении
-							</p>
+						<p class="accordion-content">
+							У каждого производителя (Aqara, Hiper, Ajax, Digma и другие) свое мобильное приложение
+							для управления гаджетами и настройки сценариев. Обычно, подключить к такой программе
+							устройства другого бренда нельзя. Но мы решили эту проблему, теперь все устройства
+							могут быть в одном приложении
+						</p>
+					</div>
+					<div class="accordion__block">
+						<div class="accordion__head">
+							<div class="accordion-subtitle">Умным домом можно управлять только через домашний Wi-Fi?</div>
+							<div class="accordion-trigger"></div>
 						</div>
-						<div class="accordion__block">
-							<div class="accordion__head">
-								<div class="accordion-subtitle">Умным домом можно управлять только через домашний Wi-Fi?</div>
-								<div class="accordion-trigger"></div>
-							</div>
-							<p class="accordion-content">
-								Вы можете управлять умными гаджетами из любой точки мира через мобильное
-								приложение от производителя. Главное, чтобы и ваш смартфон, и умные устройства 
-								были подключены к интернету.
-							</p>
+						<p class="accordion-content">
+							Вы можете управлять умными гаджетами из любой точки мира через мобильное
+							приложение от производителя. Главное, чтобы и ваш смартфон, и умные устройства 
+							были подключены к интернету.
+						</p>
+					</div>
+					<div class="accordion__block">
+						<div class="accordion__head">
+							<div class="accordion-subtitle">Смогут ли пожилые родители разобраться с умным домом?</div>
+							<div class="accordion-trigger"></div>
 						</div>
-						<div class="accordion__block">
-							<div class="accordion__head">
-								<div class="accordion-subtitle">Смогут ли пожилые родители разобраться с умным домом?</div>
-								<div class="accordion-trigger"></div>
-							</div>
-							<p class="accordion-content">
-								Вы можете настроить сценарии работы сами, а родителей научить нужным командам.
-								Заодно нужно будет объяснить, что если выключить или включить умное устройство
-								вручную, оно может перестать работать как надо. Например, если выключить свет
-								обычным выключателем, по команде он уже не загорится. А если выключить кнопкой
-								на корпусе робот-пылесос, он не поедет на уборку в положенное время.
-							</p>
-						</div>
+						<p class="accordion-content">
+							Вы можете настроить сценарии работы сами, а родителей научить нужным командам.
+							Заодно нужно будет объяснить, что если выключить или включить умное устройство
+							вручную, оно может перестать работать как надо. Например, если выключить свет
+							обычным выключателем, по команде он уже не загорится. А если выключить кнопкой
+							на корпусе робот-пылесос, он не поедет на уборку в положенное время.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -420,6 +407,9 @@
 		<img src="img/common/arrow.png" alt="arrow to scroll">
 	</button>
 	
+	<script src="./js/animation.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 
