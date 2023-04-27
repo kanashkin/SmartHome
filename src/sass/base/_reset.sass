@@ -25,10 +25,16 @@ img
 	height: 100vh
 	width: 50%
 	position: relative
-	.visual
-		position: relative
+	.visual-item
+		position: absolute
 		top: 50%
 		transform: translateY(-50%)
+		&-wrapper
+			position: relative
+			height: 100vh
 
 .title-wrapper, .header
-	padding-left: 65px	
+	padding-left: 65px
+
+.visual-wrapper
+	overflow-y: hidden
