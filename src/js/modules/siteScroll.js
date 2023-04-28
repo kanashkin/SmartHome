@@ -50,18 +50,20 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         visualItems[0].style.display = 'block'
     }
 
-    const visualScroll = () => {
+    async function visualScroll() {
         visualItems[slideIndex].style.display = 'block'
-        visualItems[slideIndex].scrollIntoView({
-            behavior: 'smooth'
-        })
-        setTimeout(() => {
-            visualItems[slideIndex - 2].style.display = 'none'
-        }, 600)
+        if (visualItems[slideIndex].classList[1] === 'click-wrapper') {
+            visualItems[slideIndex - 1].style.display = 'none'
+            widgetSwitcher('.app__widgets__block.cloneable', '.widget-switcher.cloneable', '.app__click')
+        } else {
+            visualItems[slideIndex].scrollIntoView({
+                behavior: 'smooth'
+            })
+            setTimeout(() => {
+                visualItems[slideIndex - 2].style.display = 'none'
+            }, 500)
+        }
     }
-
-
-
 
     titleBase()
     visualBase()

@@ -38,11 +38,11 @@ const widgetSwitcher = (parentSelector, elementSelector, appSelector) => {
 
     cloneWidget()
     switcherClick()
-    setTimeout(blur, 1000, appBlock, 'app__widgets')
-    setTimeout(blur, 1000, document.querySelector('.app__click>.app__widgets'), 'cloneable')
-    setTimeout(blur, 1000, document.querySelector('.app__widgets__block.cloneable'), 'clone')
-    setTimeout(showWidget, 2000)
-    setInterval(switcherClick, 2000)
+    setTimeout(blur, 500, appBlock, 'app__widgets')
+    setTimeout(blur, 500, document.querySelector('.app__click>.app__widgets'), 'cloneable')
+    setTimeout(blur, 500, document.querySelector('.app__widgets__block.cloneable'), 'clone')
+    setTimeout(showWidget, 1000)
+    setInterval(switcherClick, 1000)
     
 
 }
