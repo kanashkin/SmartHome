@@ -12,5 +12,5 @@ document.addEventListener('DOMContentLoaded', () => {
     widgetMusic('.widget-music-play')
     scenariosChecked('.real-checkbox')
     accordion('.accordion-trigger', '.accordion-content')
-    siteScroll('.arrow')
+    siteScroll('.arrow', '.header__logo','.button-header')
 })
