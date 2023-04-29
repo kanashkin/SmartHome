@@ -43,81 +43,39 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         });
     }
 
-    const visualBase = () => {
-        visualItems.forEach(item => {
-            item.style.display = 'none'
-        })
-        visualItems[0].style.display = 'block'
-    }
-
     const visualScroll = () => {
-        visualItems[slideIndex].style.display = 'block'
         if (visualItems[slideIndex].classList[1] === 'click-wrapper') {
-            visualItems[slideIndex - 1].style.display = 'none'
             widgetSwitcher('.app__widgets__block.cloneable', '.widget-switcher.cloneable', '.app__click')
+            visualItems[slideIndex].scrollIntoView()
         } else {
             visualItems[slideIndex].scrollIntoView({
                 behavior: 'smooth'
             })
-            setTimeout(() => {
-                visualItems[slideIndex - 2].style.display = 'none'
-                visualItems[0].style.display = 'block'
-            }, 500)
         }
     }
 
-    const toHome = () => {
+    const headerButtons = ( yValue, titleIndex, visualIndex, slideIndexValue) => {
         gsap.to(`.${titleItems[slideIndex - 1].classList[1]} .title-anim`, {
             duration: 0.6,
-            y: 100,
+            y: yValue,
             autoAlpha: 0,
             ease: "power1.inOut",
         });
-        gsap.to(`.${titleItems[0].classList[1]} .title-anim`, {
+        gsap.to(`.${titleItems[titleIndex].classList[1]} .title-anim`, {
             duration: 0.6,
             y: 0,
             autoAlpha: 1,
             ease: "power1.inOut",
         });
 
-        visualItems[0].scrollIntoView({
+        visualItems[visualIndex].scrollIntoView({
             behavior: 'smooth'
         })
-        setTimeout(() => {
-            visualItems[slideIndex - 2].style.display = 'none'
-        }, 500)
 
-        slideIndex = 1
-    }
-
-    const toDownload = () => {
-        gsap.to(`.${titleItems[slideIndex - 1].classList[1]} .title-anim`, {
-            duration: 0.6,
-            y: 100,
-            autoAlpha: 0,
-            ease: "power1.inOut",
-        });
-        gsap.to(`.${titleItems[titleItems.length - 1].classList[1]} .title-anim`, {
-            duration: 0.6,
-            y: 0,
-            autoAlpha: 1,
-            ease: "power1.inOut",
-        });
-
-        visualItems[visualItems.length - 1].style.display = 'block'
-        visualItems[visualItems.length - 1].scrollIntoView({
-            behavior: 'smooth'
-        })
-        setTimeout(() => {
-            visualItems[slideIndex - 2].style.display = 'none'
-            visualItems[0].style.display = 'block'
-        }, 500)
-
-        slideIndex = visualItems.length
+        slideIndex = slideIndexValue
     }
 
     titleBase()
-    visualBase()
 
     triggerBtn.addEventListener('click', () => {
         titleScroll()
@@ -134,11 +92,11 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
     })
 
     homeBtn.addEventListener('click', () => {
-        toHome()
+        headerButtons(100, 0, 0, 1)
     })
 
     downloadBtn.addEventListener('click', () => {
-        toDownload()
+        headerButtons(-100, titleItems.length - 1, visualItems.length - 1, visualItems.length)
     })
 
 }
