@@ -93,6 +93,11 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
 
     homeBtn.addEventListener('click', () => {
         headerButtons(100, 0, 0, 1)
+        triggerBtn.disabled = true
+        setTimeout(() => {
+            titleBase()
+            triggerBtn.disabled = false
+        }, 600)
     })
 
     downloadBtn.addEventListener('click', () => {
