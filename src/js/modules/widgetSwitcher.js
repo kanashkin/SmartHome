@@ -43,7 +43,11 @@ const widgetSwitcher = (cloneableSelector) => {
 
     const switcherClick = () => {
         const switcher = document.querySelector('.widget-switcher.clone>label>input')
-        switcher.checked = !switcher.checked
+        if (switcher) {
+            switcher.checked = !switcher.checked
+        } else {
+            clearInterval(interval)
+        }
     }
 
     cloningWidget()
@@ -53,6 +57,6 @@ const widgetSwitcher = (cloneableSelector) => {
     setTimeout(blur, 500, document.querySelector('.app__widgets__block.cloneable'), 'clone')
     setTimeout(showWidget, 500)
     setTimeout(animationWidget, 1500)
-    setInterval(switcherClick, 1500)
+    const interval = setInterval(switcherClick, 1500)
 }
 export default widgetSwitcher

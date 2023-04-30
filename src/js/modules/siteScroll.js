@@ -101,6 +101,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         setTimeout(() => {
             titleBase()
             triggerBtn.disabled = false
+            document.querySelector('.app__click').remove()
         }, 600)
     })
 
