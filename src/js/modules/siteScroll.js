@@ -45,7 +45,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
 
     const visualScroll = () => {
         if (visualItems[slideIndex].classList[1] === 'click-wrapper') {
-            widgetSwitcher('.app__widgets__block.cloneable', '.widget-switcher.cloneable', '.app__click')
+            widgetSwitcher('.app')
             visualItems[slideIndex].scrollIntoView()
         } else {
             visualItems[slideIndex].scrollIntoView({
@@ -78,16 +78,20 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
     titleBase()
 
     triggerBtn.addEventListener('click', () => {
-        titleScroll()
-        visualScroll()
-        slideIndex += 1
-    })
-
-    document.addEventListener('keyup', event => {
-        if (event.key === 'ArrowDown') {
+        if (slideIndex !== visualItems.length) {
             titleScroll()
             visualScroll()
             slideIndex += 1
+        }
+    })
+
+    document.addEventListener('keyup', event => {
+        if (slideIndex !== visualItems.length) {
+            if (event.key === 'ArrowDown') {
+                titleScroll()
+                visualScroll()
+                slideIndex += 1
+            }
         }
     })
 

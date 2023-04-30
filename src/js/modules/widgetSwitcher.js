@@ -1,23 +1,33 @@
-const widgetSwitcher = (parentSelector, elementSelector, appSelector) => {
-    const parent = document.querySelector(parentSelector),
-        element = document.querySelector(elementSelector),
-        appBlock = document.querySelector(appSelector)
+const widgetSwitcher = (cloneableSelector) => {
+    const cloneableApp = document.querySelector('.app'),
+        cloneApp = cloneableApp.cloneNode(true),
+        cloneableBlock = cloneApp.querySelectorAll('.app__widgets__block')[0],
+        cloneableWidget = cloneableBlock.querySelector('.widget-switcher')
+        
+    cloneableBlock.classList.add('cloneable')
+    cloneableWidget.classList.add('cloneable')
+    cloneApp.classList.add('app__click')
+    document.querySelector('.click-visual').appendChild(cloneApp)
 
-    const cloneElement = element.cloneNode(true)
+    const cloneWidget = cloneableWidget.cloneNode(true)
 
-    const cloneWidget = () => {
+    const cloningWidget = () => {
         if (!document.querySelector('.clone')) {
-            cloneElement.classList.add('clone')
-            cloneElement.classList.remove('cloneable')
-            parent.appendChild(cloneElement)
-            cloneElement.style.display = 'none'
+            cloneWidget.classList.add('clone')
+            cloneWidget.classList.remove('cloneable')
+            cloneableBlock.appendChild(cloneWidget)
+            cloneWidget.style.display = 'none'
         } else {
             return
         }
     }
 
     const showWidget = () => {
-        cloneElement.style.display = 'block'
+        cloneWidget.style.display = 'block'
+    }
+
+    const animationWidget = () => {
+        cloneWidget.classList.add('animation')
     }
 
     const blur = (block, exception) => {
@@ -36,15 +46,13 @@ const widgetSwitcher = (parentSelector, elementSelector, appSelector) => {
         switcher.checked = !switcher.checked
     }
 
-    cloneWidget()
+    cloningWidget()
     switcherClick()
-    setTimeout(blur, 500, appBlock, 'app__widgets')
+    setTimeout(blur, 500, cloneApp, 'app__widgets')
     setTimeout(blur, 500, document.querySelector('.app__click>.app__widgets'), 'cloneable')
     setTimeout(blur, 500, document.querySelector('.app__widgets__block.cloneable'), 'clone')
-    setTimeout(showWidget, 1000)
-    setInterval(switcherClick, 1000)
-    
-
+    setTimeout(showWidget, 500)
+    setTimeout(animationWidget, 1500)
+    setInterval(switcherClick, 1500)
 }
-
 export default widgetSwitcher
