@@ -19,7 +19,7 @@ const mouseAnimaton = (mouseBlocksSelector, animationBlockSelector) => {
         })
         item.addEventListener('mouseleave', () => {
             animationBlock.style.top = '50%'
-            animationBlock.style.right = '16%'
+            animationBlock.style.right = ''
         })
     });
 }
