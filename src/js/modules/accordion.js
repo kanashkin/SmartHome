@@ -1,10 +1,6 @@
-const accordion = (triggersSelector, itemsSelector) => {
+const accordion = (triggersSelector, blocksSelector) => {
     const btns = document.querySelectorAll(triggersSelector),
-        blocks = document.querySelectorAll(itemsSelector)
-
-    blocks.forEach(block => {
-        block.classList.add('fadeInDown')
-    })
+        accordionBlocks = document.querySelectorAll(blocksSelector)
   
     btns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -19,10 +15,18 @@ const accordion = (triggersSelector, itemsSelector) => {
                 })
             }
             this.classList.toggle('active')
+
             Array.from(this.parentNode.parentNode.children).forEach(item => {
+                let accordionBlock = item.parentNode
                 if (item.classList.contains('accordion-content')) {
                     item.classList.toggle('active')
                 }
+                accordionBlock.style.height = accordionBlock.offsetHeight + item.offsetHeight + 'px'
+                accordionBlocks.forEach(block => {
+                    if (!item.classList.contains('active')) {
+                        block.style.height = '73px'
+                    }
+                })
             })
         })
     })

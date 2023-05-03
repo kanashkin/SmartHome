@@ -1,7 +1,8 @@
 .accordion
-    width: 100%
+    width: 892px
     height: 455px
     position: absolute
+    right: 64px
     top: 50%
     transform: translateY(-50%)
     hr
@@ -15,11 +16,14 @@
         margin-bottom: 25px
     &__block
         border-top: 1px solid #DFE4EA
+        height: 73px
+        transition: 1s all
         padding-top: 25px
         padding-bottom: 24px
     &__head
         display: flex
         justify-content: space-between
+        align-items: center
     &-subtitle
         font-weight: 600
         font-size: 18px
@@ -28,22 +32,19 @@
         max-width: 90%
     &-trigger
         cursor: pointer
-        transition: .3s ease-in-out
-        height: 24px
-        width: 24px
-        background-image: url(../img/download/arrow.png)
-        background-repeat: no-repeat
+        transition: .5s ease-in-out
         &.active
-            background-image: url(../img/download/arrow_active.png)
+            transform: rotate(180deg)
     &-content
-        margin-top: 16px
+        padding-top: 16px
         font-weight: 400
         font-size: 16px
         line-height: 150%
         color: #57606F
-        max-width: 604px
-        display: none
-        animation-timing-function: ease-in-out
-        animation-duration: 1s
+        max-width: 700px
+        opacity: 0
+        height: 0
+        transition: .7s ease-in-out
         &.active
-            display: block
+            opacity: 1
+            height: auto

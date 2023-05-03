@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     positions('.devices-visual')
     widgetMusic('.widget-music-play')
     scenariosChecked('.real-checkbox')
-    accordion('.accordion-trigger', '.accordion-content')
+    accordion('.accordion-trigger', '.accordion__block')
     siteScroll('.arrow', '.header__logo','.button-header')
     mouseAnimaton('.mouse-block', '.promo-visual')
 })
