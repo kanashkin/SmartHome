@@ -14,6 +14,8 @@ const accordion = (triggersSelector, blocksSelector) => {
                     })
                 })
             }
+
+            this.disabled = true
             this.classList.toggle('active')
 
             Array.from(this.parentNode.parentNode.children).forEach(item => {
@@ -24,9 +26,10 @@ const accordion = (triggersSelector, blocksSelector) => {
                 accordionBlock.style.height = accordionBlock.offsetHeight + item.offsetHeight + 'px'
                 accordionBlocks.forEach(block => {
                     if (!item.classList.contains('active')) {
-                        block.style.height = '73px'
+                        block.style.height = ''
                     }
                 })
+                setTimeout(() => this.disabled = false, 800)
             })
         })
     })
