@@ -14,5 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
     scenariosChecked('.real-checkbox')
     accordion('.accordion-trigger', '.accordion__block')
     siteScroll('.arrow', '.header__logo','.button-header')
-    mouseAnimaton('.mouse-block', '.promo-visual')
+    // mouseAnimaton('.mouse-block', '.promo-visual')
 })
