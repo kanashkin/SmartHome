@@ -60,16 +60,16 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
     const runFunctions = () => {
         if (visualItems[slideIndex].classList[1] === 'click-visual') {
             widgetSwitcher('.app')
-            itemsScroll(visualItems, '', 0, 0, -1500, '')
+            itemsScroll(visualItems, '', 0, 0, -window.innerHeight, '')
         } else {
-            itemsScroll(visualItems, '', 2, 0.7, -1500, '')
+            itemsScroll(visualItems, '', 0.8, 0.8, -window.innerHeight, '')
         }
         itemsScroll(titleItems, '.title-anim', 0.6, 0.6, -100, 'power1.inOut')
         slideIndex += 1
     }
 
     itemsBase(titleItems, '.title-anim', 100)
-    itemsBase(visualItems, '', 1500)
+    itemsBase(visualItems, '', window.innerHeight)
 
 
     triggerBtn.addEventListener('click', () => {
@@ -88,11 +88,11 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
 
     homeBtn.addEventListener('click', () => {
         headerButtons(titleItems, 0, '.title-anim', 0.6, 0.6, 100)
-        headerButtons(visualItems, 0, '', 0.8, 0.8, 1500)
+        headerButtons(visualItems, 0, '', 0.8, 0.8, window.innerHeight)
         triggerBtn.disabled = true
         setTimeout(() => {
             itemsBase(titleItems, '.title-anim', 100)
-            itemsBase(visualItems, '', 1500)
+            itemsBase(visualItems, '', window.innerHeight)
             triggerBtn.disabled = false
             document.querySelector('.app__click').remove()
         }, 600)
@@ -101,7 +101,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
 
     downloadBtn.addEventListener('click', () => {
         headerButtons(titleItems, titleItems.length - 1, '.title-anim', 0.6, 0.6, -100)
-        headerButtons(visualItems, visualItems.length - 1, '', 0.8, 1, -1500)
+        headerButtons(visualItems, visualItems.length - 1, '', 0.8, 0.8, -window.innerHeight)
         slideIndex = visualItems.length
     })
 
