@@ -5,108 +5,104 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         homeBtn = document.querySelector(homeBtnSelector),
         downloadBtn = document.querySelector(downloadBtnSelector)
 
-    let slideIndex = 1
-
     const titleWrapper = document.querySelector('.title-wrapper'),
         titleItems = Array.from(titleWrapper.children)
 
     const visualWrapper = document.querySelector('.visual-wrapper'),
         visualItems = Array.from(visualWrapper.children)
+    
+    let slideIndex = 1
 
-
-    const titleBase = () => {
-        titleItems.forEach(item => {
-            gsap.set(`.${item.classList[1]} .title-anim`, {
-                y: 100,
+    const itemsBase = (itemsArray, additionalSelector, yValue) => {
+        itemsArray.forEach(item => {
+            gsap.set(`.${item.classList[1]} ${additionalSelector}`, {
+                y: yValue,
                 autoAlpha: 0,
             });
         })
         
-        gsap.set(`.${titleItems[0].classList[1]} .title-anim`, {
+        gsap.set(`.${itemsArray[0].classList[1]} ${additionalSelector}`, {
             y: 0,
             autoAlpha: 1,
         });
     }
 
-    const titleScroll = () => {
-        gsap.to(`.${titleItems[slideIndex - 1].classList[1]} .title-anim`, {
-            duration: 0.6,
-            y: -100,
+    const itemsScroll = (itemsArray, additionalSelector, firstDuration, secondDuration, yValue, easeValue) => {
+        gsap.to(`.${itemsArray[slideIndex - 1].classList[1]} ${additionalSelector}`, {
+            duration: firstDuration,
+            y: yValue,
             autoAlpha: 0,
-            ease: "power1.inOut",
+            ease: easeValue,
         });
-        gsap.to(`.${titleItems[slideIndex].classList[1]} .title-anim`, {
-            duration: 0.6,
+        gsap.to(`.${itemsArray[slideIndex].classList[1]} ${additionalSelector}`, {
+            duration: secondDuration,
             y: 0,
             autoAlpha: 1,
-            ease: "power1.inOut",
+            ease: easeValue,
         });
     }
 
-    const visualScroll = () => {
-        if (visualItems[slideIndex].classList[1] === 'click-wrapper') {
-            widgetSwitcher('.app')
-            visualItems[slideIndex].scrollIntoView()
-        } else {
-            visualItems[slideIndex].scrollIntoView({
-                behavior: 'smooth'
-            })
-        }
-    }
-
-    const headerButtons = ( yValue, titleIndex, visualIndex, slideIndexValue) => {
-        gsap.to(`.${titleItems[slideIndex - 1].classList[1]} .title-anim`, {
-            duration: 0.6,
+    const headerButtons = (itemsArray, itemsIndex, additionalSelector, firstDuration, secondDuration, yValue) => {
+        gsap.to(`.${itemsArray[slideIndex - 1].classList[1]} ${additionalSelector}`, {
+            duration: firstDuration,
             y: yValue,
             autoAlpha: 0,
             ease: "power1.inOut",
         });
-        gsap.to(`.${titleItems[titleIndex].classList[1]} .title-anim`, {
-            duration: 0.6,
+        gsap.to(`.${itemsArray[itemsIndex].classList[1]} ${additionalSelector}`, {
+            duration: secondDuration,
             y: 0,
             autoAlpha: 1,
             ease: "power1.inOut",
         });
-
-        visualItems[visualIndex].scrollIntoView({
-            behavior: 'smooth'
-        })
-
-        slideIndex = slideIndexValue
     }
 
-    titleBase()
+    const runFunctions = () => {
+        if (visualItems[slideIndex].classList[1] === 'click-visual') {
+            widgetSwitcher('.app')
+            itemsScroll(visualItems, '', 0, 0, -1500, '')
+        } else {
+            itemsScroll(visualItems, '', 2, 0.7, -1500, '')
+        }
+        itemsScroll(titleItems, '.title-anim', 0.6, 0.6, -100, 'power1.inOut')
+        slideIndex += 1
+    }
+
+    itemsBase(titleItems, '.title-anim', 100)
+    itemsBase(visualItems, '', 1500)
+
 
     triggerBtn.addEventListener('click', () => {
         if (slideIndex !== visualItems.length) {
-            titleScroll()
-            visualScroll()
-            slideIndex += 1
+            runFunctions()
         }
     })
 
     document.addEventListener('keyup', event => {
         if (slideIndex !== visualItems.length) {
             if (event.key === 'ArrowDown') {
-                titleScroll()
-                visualScroll()
-                slideIndex += 1
+                runFunctions()
             }
         }
     })
 
     homeBtn.addEventListener('click', () => {
-        headerButtons(100, 0, 0, 1)
+        headerButtons(titleItems, 0, '.title-anim', 0.6, 0.6, 100)
+        headerButtons(visualItems, 0, '', 0.8, 0.8, 1500)
         triggerBtn.disabled = true
         setTimeout(() => {
-            titleBase()
+            itemsBase(titleItems, '.title-anim', 100)
+            itemsBase(visualItems, '', 1500)
             triggerBtn.disabled = false
             document.querySelector('.app__click').remove()
         }, 600)
+        slideIndex = 1
     })
 
     downloadBtn.addEventListener('click', () => {
-        headerButtons(-100, titleItems.length - 1, visualItems.length - 1, visualItems.length)
+        headerButtons(titleItems, titleItems.length - 1, '.title-anim', 0.6, 0.6, -100)
+        headerButtons(visualItems, visualItems.length - 1, '', 0.8, 1, -1500)
+        slideIndex = visualItems.length
     })
 
 }

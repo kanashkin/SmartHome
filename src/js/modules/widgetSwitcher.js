@@ -1,5 +1,5 @@
 const widgetSwitcher = (cloneableSelector) => {
-    const cloneableApp = document.querySelector('.app'),
+    const cloneableApp = document.querySelector(cloneableSelector),
         cloneApp = cloneableApp.cloneNode(true),
         cloneableBlock = cloneApp.querySelectorAll('.app__widgets__block')[0],
         cloneableWidget = cloneableBlock.querySelector('.widget-switcher')
