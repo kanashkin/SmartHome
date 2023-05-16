@@ -13,20 +13,6 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
     
     let slideIndex = 1
 
-    const fixAnimation = () => {
-        visualItems[0].style.transition = 'none'
-        const animationBlocks = document.querySelectorAll('.mouse-block')
-        if (slideIndex > 1) {
-            animationBlocks.forEach(block => {
-                block.style.display = 'none'
-            })
-        } else if (slideIndex === 1) {
-            animationBlocks.forEach(block => {
-                block.style.display = 'block'
-            })
-        }
-    }
-
     const itemsBase = (itemsArray, additionalSelector, yValue) => {
         itemsArray.forEach(item => {
             gsap.set(`.${item.classList[1]} ${additionalSelector}`, {
@@ -89,7 +75,6 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
     triggerBtn.addEventListener('click', () => {
         if (slideIndex !== visualItems.length) {
             runFunctions()
-            fixAnimation()
         }
     })
 
@@ -97,7 +82,6 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         if (slideIndex !== visualItems.length) {
             if (event.key === 'ArrowDown') {
                 runFunctions()
-                fixAnimation()
             }
         }
     })
@@ -113,14 +97,12 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
             document.querySelector('.app__click').remove()
         }, 600)
         slideIndex = 1
-        fixAnimation()
     })
 
     downloadBtn.addEventListener('click', () => {
         headerButtons(titleItems, titleItems.length - 1, '.title-anim', 0.6, 0.6, -100)
         headerButtons(visualItems, visualItems.length - 1, '', 0.8, 0.8, -window.innerHeight)
         slideIndex = visualItems.length
-        fixAnimation()
     })
 
 }
