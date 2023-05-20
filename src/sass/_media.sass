@@ -77,4 +77,32 @@
 		img
 			zoom: 0.8
 
-		   
+@media (max-width: 768px)
+	.title,.download-title__block
+		font-size: 48px
+		top: 131px
+		transform: none
+		.title
+			top: 0
+	.title-wrapper, .header
+		padding-left: 64px
+	.visual-item
+		left: 30px
+		right: 0
+		top: 368px
+		transform: scale(0.9)
+	.apps-visual
+		left: -50px
+	.widget-switcher.clone
+		left: 198px
+	.widget-switcher.clone.animation
+		top: 40%
+		left: 385px
+		animation-name: clone-media
+	body
+		overflow-y: scroll
+		&::-webkit-scrollbar
+			width: 0
+		-ms-overflow-style: none
+		scrollbar-width: none
+		

@@ -19,12 +19,13 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
                 y: yValue,
                 autoAlpha: 0,
             });
+            item.style.display = 'none'
         })
-        
         gsap.set(`.${itemsArray[0].classList[1]} ${additionalSelector}`, {
             y: 0,
             autoAlpha: 1,
         });
+        itemsArray[0].style.display = 'block'
     }
 
     const itemsScroll = (itemsArray, additionalSelector, firstDuration, secondDuration, yValue, easeValue) => {
@@ -34,6 +35,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
             autoAlpha: 0,
             ease: easeValue,
         });
+        itemsArray[slideIndex].style.display = 'block'
         gsap.to(`.${itemsArray[slideIndex].classList[1]} ${additionalSelector}`, {
             duration: secondDuration,
             y: 0,
@@ -49,6 +51,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
             autoAlpha: 0,
             ease: "power1.inOut",
         });
+        itemsArray[itemsIndex].style.display = 'block'
         gsap.to(`.${itemsArray[itemsIndex].classList[1]} ${additionalSelector}`, {
             duration: secondDuration,
             y: 0,
