@@ -42,6 +42,8 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
             autoAlpha: 1,
             ease: easeValue,
         });
+        triggerBtn.disabled = true
+        setTimeout(() => triggerBtn.disabled = false, 1000)    
     }
 
     const headerButtons = (itemsArray, itemsIndex, additionalSelector, firstDuration, secondDuration, yValue) => {
@@ -82,11 +84,9 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
     })
 
     document.addEventListener('keyup', event => {
-        if (slideIndex !== visualItems.length) {
-            if (event.key === 'ArrowDown') {
-                runFunctions()
-            }
-        }
+        if (event.key === 'ArrowDown') {
+            triggerBtn.click()
+        }      
     })
 
     homeBtn.addEventListener('click', () => {
