@@ -78,6 +78,10 @@
 			zoom: 0.8
 
 @media (max-width: 768px)
+	.header
+		padding-right: 64px
+	.header__inner
+		justify-content: space-between
 	.title,.download-title__block
 		font-size: 48px
 		top: 131px
@@ -88,7 +92,6 @@
 		padding-left: 64px
 	.visual-item
 		left: 30px
-		right: 0
 		top: 368px
 		transform: scale(0.9)
 	.apps-visual
@@ -105,4 +108,95 @@
 			width: 0
 		-ms-overflow-style: none
 		scrollbar-width: none
+	.button-download
+		width: 140px
+		height: 40px
+		h4
+			font-size: 12px
+			line-height: 16px
 		
+@media (max-width: 575px)
+	.header
+		padding-right: 32px
+	.title
+		font-size: 38px
+	.title-wrapper, .header
+		padding-left: 32px
+	.arrow
+		left: 32px
+	.visual-item
+		left: -110px
+		top: 250px
+		transform: scale(0.6)
+	.apps-visual
+		left: -170px
+	.important, .click
+		&-visual
+			left: -20px
+	.groups-visual
+		transform: scale(0.5)
+		left: -140px
+		top: 200px
+	.accordion
+		transform: scale(0.7)
+		left: -35px
+		top: 350px
+
+@media (max-width: 320px)
+	.header
+		padding: 0 16px 0 16px
+		height: 75px
+	.title-wrapper
+		padding-left: 16px
+	.title
+		font-size: 32px
+		font-weight: 700
+	.arrow
+		left: 16px
+	.visual-item
+		left: -170px
+		top: 150px
+		transform: scale(0.45)
+	.apps-visual
+		left: -230px
+		top: 200px
+	.important, .click
+		&-visual
+			left: -50px
+	.groups-visual
+		transform: scale(0.4)
+		left: -150px
+		top: 120px
+	.accordion
+		width: 288px
+		left: 16px
+		transform: scale(1)
+		top: 450px
+		height: auto
+		&-title
+			font-size: 32px
+		&__block
+			height: 118px
+			&:nth-child(2)
+				.accordion-subtitle
+					max-width: 220px
+			&:nth-child(3)
+				height: 80px
+			&:nth-child(4)
+				height: 141px
+				
+				
+				
+	
+			
+	.download__buttons
+		display: block
+	.button-download
+		width: 178px
+		height: 54px
+		h4
+			font-size: 16px
+			line-height: 19px
+		&:first-child
+			margin-bottom: 16px
+	
