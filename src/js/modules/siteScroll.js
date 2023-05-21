@@ -107,15 +107,6 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         headerButtons(visualItems, visualItems.length - 1, '', 0.8, 0.8, -window.innerHeight)
         slideIndex = visualItems.length
     })
-
-    // document.addEventListener('scroll', (e) => {
-    //     let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight)
-    //     let scrollHeightNow = window.pageYOffset + document.documentElement.clientHeight
-    //     console.log(scrollHeight, scrollHeightNow);
-    //     console.log(scrollY);
-    //     }
-    // )
-
 }
 
 export default siteScroll
