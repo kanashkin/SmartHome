@@ -43,7 +43,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
             ease: easeValue,
         });
         triggerBtn.disabled = true
-        setTimeout(() => triggerBtn.disabled = false, 1000)    
+        setTimeout(() => triggerBtn.disabled = false, 1200)    
     }
 
     const headerButtons = (itemsArray, itemsIndex, additionalSelector, firstDuration, secondDuration, yValue) => {
@@ -67,9 +67,9 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
             widgetSwitcher('.app')
             itemsScroll(visualItems, '', 0, 0, -window.innerHeight, '')
         } else {
-            itemsScroll(visualItems, '', 0.9, 0.9, -window.innerHeight, '')
+            itemsScroll(visualItems, '', 1.2, 1.2, -window.innerHeight, '')
         }
-        itemsScroll(titleItems, '.title-anim', 0.6, 0.6, -100, 'power1.inOut')
+        itemsScroll(titleItems, '.title-anim', 0.8, 0.8, -100, 'power1.inOut')
         slideIndex += 1
     }
 
