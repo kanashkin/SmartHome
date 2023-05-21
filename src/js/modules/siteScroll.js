@@ -108,12 +108,13 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         slideIndex = visualItems.length
     })
 
-    document.addEventListener('scroll', (e) => {
-        let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight)
-        if (window.pageYOffset + document.documentElement.clientHeight + 59 >= scrollHeight) {
-            triggerBtn.click()
-        }
-    })
+    // document.addEventListener('scroll', (e) => {
+    //     let scrollHeight = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight)
+    //     let scrollHeightNow = window.pageYOffset + document.documentElement.clientHeight
+    //     console.log(scrollHeight, scrollHeightNow);
+    //     console.log(scrollY);
+    //     }
+    // )
 
 }
 
