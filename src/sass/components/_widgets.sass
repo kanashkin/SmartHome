@@ -17,81 +17,8 @@
         font-size: 12px
         line-height: 14px
         margin-bottom: 4px
-    &__scenarios
-        position: absolute
-        height: 85px
-        padding: 15px
-        margin-top: 10px
-        &:nth-child(2)
-            left: 188px
-        &:nth-child(3)
-            width: 136px
-            left: 356px
-        &__block
-            display: flex
-            justify-content: space-between
-            align-items: center
-        &-title
-            margin-top: 6px
-        label
-            cursor: pointer
-            .real-checkbox
-                width: 0
-                height: 0
-                opacity: 0
-                position: absolute
-                z-index: -1
-            .custom-checkbox
-                position: relative
-                display: inline-block
-                width: 18px
-                height: 18px
-                border-radius: 100%
-                background-color: #A4B0BE
-                vertical-align: sub
-            .custom-checkbox::before
-                content: ''
-                display: inline-block
-                width: 11px
-                height: 8px
-                background-image: url('../img/important/widgets/scenarios/check.png')
-                background-size: contain
-                background-repeat: no-repeat
-
-                position: absolute
-                left: 50%
-                top: 50%
-                transform: translate(-50%, -50%) scale(0)
-
-                transition: 0.2s ease-in
-
-            .real-checkbox:checked + .custom-checkbox::before
-                transform: translate(-50%, -50%) scale(1)
-            .real-checkbox:checked +.custom-checkbox
-                background-color: #2ED573
-
-.widget-music
-    &__block
-        display: flex
-        gap: 20px
-        padding-left: 8px
-        margin-top: 36px
-    &-play
-        height: 24px
-        width: 24px
-        cursor: pointer
-        background-image: url('../img/important/widgets/widget-music/play.png')
-        background-size: contain
-        background-repeat: no-repeat
-        transition: .1s ease-in-out
-    &-pause
-        width: 24px
-        height: 24px
-        cursor: pointer
-        display: none
-
 .widget-switcher
-    position: relative
+    position: absolute
     label
         position: absolute
         margin-top: 8px
@@ -121,29 +48,25 @@
     input:checked:before
         background-color: #2ED573
         left: 20px
-    &-kettle, &-wifi, &-bulb
+    &-kettle
         position: absolute
         right: 0
         bottom: 0
-    &-kettle
-        width: 92px
-        height: 95px
-    &-bulb
-        right: 10px
 
 
-.widget-switcher.clone
+.widget-switcher
     position: absolute
     z-index: 100
-    right: 20px
-    top: 461px
+    right: 136.5px
+    top: 440px
+    overflow: hidden
     transform: scale(1)
-.widget-switcher.clone.animation
-    top: 40%
-    right: 210px
+.widget-switcher.animation
+    right: 370px
+    top: 250px
     transform: scale(2.5)
-    animation-name: clone
-    animation-duration: .7s
-    animation-timing-function: linear
+    animation-name: increase
+    animation-duration: .4s
+    animation-timing-function: ease-in-out
         
         

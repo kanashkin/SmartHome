@@ -64,7 +64,7 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
 
     const runFunctions = () => {
         if (visualItems[slideIndex].classList[1] === 'click-visual') {
-            widgetSwitcher('.app')
+            widgetSwitcher('.app-blur', '.widget-switcher')
             itemsScroll(visualItems, '', 0, 0, -window.innerHeight, '')
         } else {
             itemsScroll(visualItems, '', 1.2, 1.2, -window.innerHeight, '')
@@ -96,8 +96,9 @@ const siteScroll = (triggerBtnSelector, homeBtnSelector, downloadBtnSelector) =>
         setTimeout(() => {
             itemsBase(titleItems, '.title-anim', 100)
             itemsBase(visualItems, '', window.innerHeight)
+            document.querySelector('.app-blur').style.animationName = 'none'
+            document.querySelector('.widget-switcher').classList.remove('animation')
             triggerBtn.disabled = false
-            document.querySelector('.app__click').remove()
         }, 600)
         slideIndex = 1
     })
