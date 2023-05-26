@@ -12,6 +12,7 @@ const widgetSwitcher = (blurElementSelector, widgetSelector) => {
             switcher.checked = !switcher.checked
         } else {
             clearInterval(interval)
+            console.log('clear');
         }
     }
     const interval = setInterval(switcherClick, 1500)
