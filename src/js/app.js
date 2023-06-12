@@ -10,5 +10,5 @@ document.addEventListener('DOMContentLoaded', () => {
     positions('.apps-visual')
     positions('.devices-visual')
     accordion('.accordion-trigger', '.accordion__block')
-    // siteScroll('.arrow', '.header__logo','.button-header')
+    siteScroll('.arrow', '.header__logo','.button-header')
 })

@@ -14,8 +14,10 @@ const groupsAnimation = (itemsSelector, centerItemSelector, leftItemSelector, ri
                 items[currentItem - 2].classList.add('groups-item-left')
                 items = [item, items[currentItem - 2], items[currentItem - 1]]
             }
-            items.forEach(classItem => {
-                classItem.classList.remove(classItem.classList[1])
+            items.forEach(item => {
+                item.style.animationName = 'groupsAnimation'
+                item.classList.remove(item.classList[1])
+                setTimeout(() => item.style.animationName = 'none', 1000)
             })
         })
     })
